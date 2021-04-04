@@ -1,0 +1,51 @@
+@media (max-width: 1150px) {
+  #container {
+    width: 80rem;
+  }
+}
+
+@media (max-width: 800px) {
+  #container {
+    width: 100%;
+  }
+
+  #send-button,
+  #delete-button,
+  #back-button {
+    width: 7.6rem !important;
+    font-size: 2rem !important;
+  }
+}
+
+@media (max-width: 500px) {
+  #container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+
+  #display {
+    width: 90%;
+    height: 14rem;
+    margin: 0;
+
+    -webkit-box-pack: center;
+
+    -ms-flex-pack: center;
+
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+
+  #buttons-area {
+    height: 30rem;
+    width: 100%;
+  }
+
+  #buttons-area button {
+    height: 5rem;
+  }
+}

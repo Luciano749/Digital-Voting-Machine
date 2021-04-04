@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!--css-->
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/animation.css">
+    <link rel="stylesheet" href="/css/responsiveness.css">
+
+    <title>EVM</title>
+</head>
+
+<body>
+    <div id="container">
+        <div id="display"></div>
+        <div id="buttons-area">
+            <button id="send-button" onclick="sendVote()">send</button>
+            <button id="delete-button" onclick="deleteA()">delete</button>
+            <button id="back-button" onclick="backOne()">back</button>
+        </div>
+
+    </div>
+    <!--container-->
+    <button onclick="clearVotes()" id="reset-votes">reset</button>
+    <button onclick="showResults()" id="show-results-button">results</button>
+
+    <div id="result-area-container">
+        <div id="result-area">
+            <h3>Blue:<span id="blue-txt">0</span></h1>
+                <h3>White:<span id="white-txt">0</span></h1>
+                    <h3>Orange:<span id="orange-txt">0</span></h1>
+                        <h3>Red:<span id="red-txt">0</span></h1>
+        </div>
+        <!--result-area-->
+    </div>
+    <!--result-area-container-->
+
+
+    <!-- javaScript -->
+    <script src="/js/script.js"></script>
+</body>
+
+</html>
