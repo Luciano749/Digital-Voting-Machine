@@ -31,6 +31,19 @@ const show = (e) => {
     displayA.innerHTML = displayA.innerHTML.substring(0, 3);
 };
 
+document.addEventListener("keydown", (e) => {
+  let displayA = document.getElementById("display");
+
+  if (/^\d+$/.test(e.key)) {
+    if (e.key) displayA.innerHTML = displayA.innerHTML + e.key;
+    if (displayA.innerHTML.length > 2)
+      displayA.innerHTML = displayA.innerHTML.substring(0, 3);
+  }
+
+  if (e.key == "Backspace") backOne();
+  if (e.key == "Enter") sendVote();
+});
+
 const deleteA = () => {
   let displayA = document.getElementById("display");
   displayA.innerHTML = "";
@@ -57,6 +70,7 @@ let voteOrange = localStorage.hasOwnProperty("voteOrange")
 let voteRed = localStorage.hasOwnProperty("voteRed")
   ? parseInt(localStorage.getItem("voteRed"))
   : 0;
+
 const sendVote = () => {
   let displayA = document.getElementById("display");
 
@@ -69,7 +83,6 @@ const sendVote = () => {
     resultAreaText[0].innerHTML = voteBlue;
 
     localStorage.setItem("voteBlue", voteBlue);
-    // localStorage.setItem("resultAreaText0", resultAreaText[0].innerHTML);
   }
 
   if (displayA.innerHTML == 444) {
@@ -81,7 +94,6 @@ const sendVote = () => {
     resultAreaText[1].innerHTML = voteWhite;
 
     localStorage.setItem("voteWhite", voteWhite);
-    // localStorage.setItem("resultAreaText1", resultAreaText[1].innerHTML);
   }
 
   if (displayA.innerHTML == 555) {
@@ -93,7 +105,6 @@ const sendVote = () => {
     resultAreaText[2].innerHTML = voteOrange;
 
     localStorage.setItem("voteOrange", voteOrange);
-    // localStorage.setItem("resultAreaText2", resultAreaText[2].innerHTML);
   }
 
   if (displayA.innerHTML == 666) {
@@ -105,11 +116,12 @@ const sendVote = () => {
     resultAreaText[3].innerHTML = voteRed;
 
     localStorage.setItem("voteRed", voteRed);
-    // localStorage.setItem("resultAreaText3", resultAreaText[3].innerHTML);
   }
 
   let square = document.getElementsByClassName("square")[0];
-  square.style.backgroundColor = square.id;
+
+  if (typeof square != "undefined") square.style.backgroundColor = square.id;
+  else alert("candidato não encontrado");
 };
 
 const clearVotes = () => {
